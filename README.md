@@ -59,7 +59,7 @@
 
 > Add a link to your deployed project.
 
-- [No Live Demo]()
+- No Live Demo available
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,7 +79,14 @@ In order to run this project you need:
 ### Setup
 
 Clone this repository to your desired folder:
+- To run this project, ensure you have basic understanding of ruby
+- Install [Ruby](https://rubyinstaller.org/downloads/) in your computer
+```sh
+  $ ruby -v
+  ruby 3.2.1 (2023-02-08 revision 31819e82c8) [x64-mingw-ucrt]
+```
 
+- clone the project in your computer
 
 ```sh
   git clone https://github.com/george827/school_library.git
@@ -93,7 +100,8 @@ Install this project with:
 ```sh
   cd school_library
   gem install robocop
-  bundle install
+  bundle i
+  ruby person.rb
 ```
 
 
@@ -103,7 +111,7 @@ Install this project with:
 
 
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Author <a name="authors"></a>
 
 > Mention all of the collaborators of this project.
 
@@ -119,9 +127,10 @@ Install this project with:
 ## 🔭 Future Features <a name="future-features"></a>
 
 > Describe 1 - 3 features you will add to the project.
+- Implement GUI
+- Preserve data
+- Unit tests
 
-- [ ] **[Unit Testing]**
-- [ ] **[Wanted to use in Web site]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,7 +146,7 @@ Feel free to check the [issues page](https://github.com/george827/school_library
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project besure to give a star and also connect on over social media website for getting uptodate knowladge.
+If you like this project besure to give a star 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

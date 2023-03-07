@@ -36,7 +36,7 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> CLient
+
 
 <details>
   <summary>Client</summary>
@@ -57,7 +57,6 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
 
 - No Live Demo available
 
@@ -66,7 +65,6 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
@@ -104,16 +102,12 @@ Install this project with:
   ruby person.rb
 ```
 
-
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 ## 👥 Author <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
 
 👤 **George kinyanjui**
 
@@ -126,7 +120,6 @@ Install this project with:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
 - Implement GUI
 - Preserve data
 - Unit tests
@@ -142,7 +135,6 @@ Feel free to check the [issues page](https://github.com/george827/school_library
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
@@ -150,7 +142,6 @@ If you like this project besure to give a star
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
@@ -158,7 +149,6 @@ I would like to thank all code reviewers for making this project better.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 

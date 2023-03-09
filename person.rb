@@ -3,9 +3,9 @@ require './capitalizedecorator'
 require './trimmerdecorator'
 
 class Person < Nameable
+  attr_accessor :rentals
   attr_reader :id
   attr_writer :name, :age
-  attr_accessor :rentals
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     super()

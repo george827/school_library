@@ -17,7 +17,8 @@ class Person < Nameable
   end
 
   def add_rental(date, book)
-    Rental.new(date, book, self)
+    rental = Rental.new(date, book, self)
+    @rentals.push(rental)
   end
 
   def correct_name

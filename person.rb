@@ -1,11 +1,10 @@
-require './naeable'
 require './capitalizedecorator'
 require './trimmerdecorator'
+require './nameable'
 
 class Person < Nameable
-  attr_accessor :rentals
+  attr_accessor :rentals, :name, :age
   attr_reader :id
-  attr_writer :name, :age
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     super()

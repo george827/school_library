@@ -17,8 +17,6 @@ class App
         puts "Title: #{book.title}, Author: #{book.author}"
       end
     end
-    show_list
-    continue
   end
 
   def list_all_people
@@ -29,8 +27,6 @@ class App
         puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
     end
-    show_list
-    continue
   end
 
   def create_person
@@ -62,8 +58,6 @@ class App
       @people.push(Teacher.new(age, name, specialization))
       puts "Person Teacher Created successfully\n\n"
     end
-    show_list
-    continue
   end
 
   def create_book
@@ -77,15 +71,12 @@ class App
     @books.push(Book.new(title, author))
 
     puts "Book Created successfully \n\n"
-    show_list
-    continue
   end
 
   def list_all_books_with_numbers
     if @books.empty?
       puts 'Please insert books first!!'
-      show_list
-      continue
+
     else
       @books.each_with_index do |book, index|
         puts "#{index}) Title: #{book.title}, Author: #{book.author}"
@@ -96,8 +87,7 @@ class App
   def list_all_person_with_numbers
     if @people.empty?
       puts 'Please insert people first!!'
-      show_list
-      continue
+
     else
       @people.each_with_index do |person, index|
         puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
@@ -119,8 +109,6 @@ class App
     Rental.new(date, @books[book_option], @people[person_option])
 
     puts 'Rental created successfully'
-    show_list
-    continue
   end
 
   def list_rentals_of_person_id()
@@ -135,22 +123,6 @@ class App
       person_arr[0].rentals.each do |rental|
         puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
       end
-    end
-    show_list
-    continue
-  end
-
-  def continue
-    case gets.chomp
-    when '1' then list_all_books
-    when '2' then list_all_people
-    when '3' then create_person
-    when '4' then create_book
-    when '5' then create_rental
-    when '6' then list_rentals_of_person_id
-    when '7'
-      puts 'Thank you for using this app!'
-      exit
     end
   end
 end

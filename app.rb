@@ -4,9 +4,16 @@ require './teacher'
 require './book'
 
 class App
+  attr_reader :books, :people, :rentals
+
   def initialize
     @books = []
     @people = []
+    @rentals = []
+  end
+
+  def gets_books
+    @books
   end
 
   def list_all_books
@@ -106,8 +113,7 @@ class App
 
     puts 'Date: '
     date = gets.chomp
-    Rental.new(date, @books[book_option], @people[person_option])
-
+    @rental.push(Rental.new(date, @books[book_option], @people[person_option]))
     puts 'Rental created successfully'
   end
 

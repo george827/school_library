@@ -115,6 +115,12 @@ Install this project with:
 - LinkedIn: [George Kinyanjui](https://www.linkedin.com/in/georgekinyanjui/)
 - twiter: [George Kinyanjui](https://twitter.com/geok8376)
 
+👤 **Tsohle Mokhemisi**
+
+- GitHub: [@githubhandle](https://github.com/tsohleDev2)
+- Twitter: [@twitterhandle](https://twitter.com/RealTsohle)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/tsohle-mokhemisi-3687401b2/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 

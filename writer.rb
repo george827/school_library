@@ -1,6 +1,7 @@
 require_relative 'person'
 require_relative 'book'
 require_relative 'rental'
+require 'json'
 
 class Writter
   def self.write(people, books, rentals)

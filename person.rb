@@ -35,7 +35,7 @@ class Person < Nameable
     {
       'id' => @id,
       'name' => @name,
-      'age' => @age,
+      'age' => @age
     }.to_json(*args)
   end
 

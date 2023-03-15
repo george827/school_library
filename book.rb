@@ -1,14 +1,24 @@
+require 'json'
+
 class Book
   attr_accessor :title, :author, :rentals
 
-  def initialize(title, author)
-    @title = title
-    @author = author
+  def initialize(titlex, authorx)
+    @title = titlex
+    @author = authorx
     @rentals = []
   end
 
   def add_rental(date, person)
     rental = Rental.new(date, self, person)
     @rentals.push(rental)
+  end
+
+  def to_json(*args)
+    {
+      'title': @title,
+      'author': @author,
+      'rentals': @rentals
+    }.to_json(*args)
   end
 end

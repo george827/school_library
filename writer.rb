@@ -13,23 +13,29 @@ class Writter
     files.each do |file, objects|
       if File.exist?(file) and !File.zero?(file)
         data = JSON.parse(File.read(file))
+        
+        data = Writter.morph(data, file)
 
-        data = Writter.morph(data)
-
-        objects = data + objects
+        objects += data
       end
 
-      File.write(file, JSON.pretty_generate(objects.map(&:to_json)))
+      File.write(file, JSON.s(objects.map(&:to_json)))
     end
   end
 
-  def self.morph(data)
-    data.map do |d|
-      if d.instance_of?(Person)
-        Person.new(d['name'], d['age'], parent_permission: d['parent_permission'])
-      elsif d.instance_of?(Book)
+  def self.morph(data, file)
+    return data.map do |datu|
+      d = JSON.parse(datu)
+
+      if file == 'people.json'
+        if d['type'] == 'Student'
+          Student.new(d['name'], d['age'], d['classroom'], parent_permission: d['parent_permission'])
+        elsif d['type'] == 'Teacher'
+          Teacher.new(d['name'], d['age'], d['specialization'])
+        end
+      elsif file == 'books.json'
         Book.new(d['title'], d['author'])
-      elsif d.instance_of?(Rental)
+      elsif file == 'rentals.json'
         Rental.new(d['date'], d['book'], d['person'])
       end
     end

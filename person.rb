@@ -1,6 +1,9 @@
 require './capitalizedecorator'
 require './trimmerdecorator'
 require './nameable'
+require './rental'
+require 'json'
+require_relative 'writer'
 
 class Person < Nameable
   attr_accessor :rentals, :name, :age
@@ -26,6 +29,15 @@ class Person < Nameable
 
   def can_use_services?
     is_of_age? || @parent_permission
+  end
+
+  def to_json(*args)
+    {
+      'id' => @id,
+      'name' => @name,
+      'age' => @age,
+      'rentals' => @rentals
+    }.to_json(*args)
   end
 
   private

@@ -2,14 +2,19 @@ require './rental'
 require './student'
 require './teacher'
 require './book'
+require './writer'
+require 'json'
 
 class App
   attr_reader :books, :people, :rentals
 
   def initialize
-    @books = []
-    @people = []
-    @rentals = []
+    #read from json
+    @books = Writter.morph(JSON.parse(File.read('books.json')), 'books.json')
+    @people = Writter.morph(JSON.parse(File.read('people.json')), 'people.json')
+    @rentals = Writter.morph(JSON.parse(File.read('rentals.json')), 'rentals.json')
+
+    puts @books.inspect
   end
 
   def gets_books

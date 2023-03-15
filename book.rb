@@ -14,11 +14,11 @@ class Book
     @rentals.push(rental)
   end
 
-  def to_json(*args)
+  def to_json
     {
-      'title': @title,
-      'author': @author,
-      'rentals': @rentals
-    }.to_json(*args)
+      title: @title,
+      author: @author,
+      rentals: @rentals
+    }
   end
 end

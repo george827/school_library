@@ -9,7 +9,7 @@ class App
   attr_reader :books, :people, :rentals
 
   def initialize
-    #read from json
+    # read from json
     @books = Writter.morph(JSON.parse(File.read('books.json')), 'books.json')
     @people = Writter.morph(JSON.parse(File.read('people.json')), 'people.json')
     @rentals = Writter.morph(JSON.parse(File.read('rentals.json')), 'rentals.json')
@@ -118,7 +118,7 @@ class App
 
     puts 'Date: '
     date = gets.chomp
-    @rental.push(Rental.new(date, @books[book_option], @people[person_option]))
+    @rentals.push(Rental.new(date, @books[book_option], @people[person_option]))
     puts 'Rental created successfully'
   end
 

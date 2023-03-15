@@ -13,8 +13,6 @@ class App
     @books = Writter.morph(JSON.parse(File.read('books.json')), 'books.json')
     @people = Writter.morph(JSON.parse(File.read('people.json')), 'people.json')
     @rentals = Writter.morph(JSON.parse(File.read('rentals.json')), 'rentals.json')
-
-    puts @books.inspect
   end
 
   def gets_books
@@ -125,13 +123,13 @@ class App
   def list_rentals_of_person_id()
     print 'Id of person: '
     id = gets.chomp.to_i
-    person_arr = @people.select { |person| person.id == id }
+    person_arr = @rentals.select { |rental|  rental.person.id == id }
 
     if person_arr.empty?
       puts 'No person matches the given ID!!'
     else
       print 'Rentals:'
-      person_arr[0].rentals.each do |rental|
+      person_arr.each do |rental|
         puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
       end
     end

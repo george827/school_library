@@ -11,14 +11,13 @@ class Book
 
   def add_rental(date, person)
     rental = Rental.new(date, self, person)
-    @rentals.push(rental)
+    @rentals.push(rental) unless @rentals.include?(rental)
   end
 
-  def to_json
+  def to_json(*args)
     {
       title: @title,
       author: @author,
-      rentals: @rentals
-    }
+    }.to_json(*args)
   end
 end

@@ -1,4 +1,4 @@
 [
-  "{\"type\":\"Teacher\",\"id\":482,\"name\":\"34\",\"age\":\"sdfgh\",\"rentals\":[],\"specialization\":\"szdsxfg\",\"parent_permission\":\"true\"}",
-  "{\"type\":\"Teacher\",\"id\":247,\"name\":\"werfg\",\"age\":\"765\",\"rentals\":[],\"specialization\":\"sdfgh\",\"parent_permission\":\"true\"}"
+  "{\"type\":\"Student\",\"id\":668,\"name\":\"13\",\"age\":\"george\",\"classroom\":true,\"parent_permission\":true}",
+  "{\"type\":\"Teacher\",\"id\":109,\"name\":\"42\",\"age\":\"white\",\"specialization\":\"chem\",\"parent_permission\":\"true\"}"
 ]

@@ -2,8 +2,8 @@ require './person'
 class Student < Person
   attr_reader :classroom
 
-  def initialize(age, name, classroom, parent_permission: true)
-    super(age, name)
+  def initialize(age, name, classroom, parent_permission: true, id: Random.rand(1..1000))
+    super(age, name, parent_permission: parent_permission, id: id)
     @parent_permission = parent_permission
     @classroom = classroom
   end
@@ -23,7 +23,6 @@ class Student < Person
       'id' => @id,
       'name' => @name,
       'age' => @age,
-      'rentals' => @rentals,
       'classroom' => @classroom,
       'parent_permission' => @parent_permission
     }.to_json(*args)

@@ -8,7 +8,7 @@ class Rental
     book.rentals << self
 
     @person = person
-    person.rentals << self
+    person.rentals << self unless person.rentals.include?(self)
   end
 
   def to_json(*args)

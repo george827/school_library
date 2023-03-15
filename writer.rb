@@ -11,14 +11,6 @@ class Writter
     }
 
     files.each do |file, objects|
-      # if File.exist?(file) and !File.zero?(file)
-      #   data = JSON.parse(File.read(file))
-
-      #   data = Writter.morph(data, file)
-
-      #   objects
-      # end
-
       File.write(file, JSON.pretty_generate(objects.map(&:to_json)))
     end
   end
@@ -31,14 +23,16 @@ class Writter
       when 'people.json'
         case d['type']
         when 'Student'
-          Student.new(d['name'], d['age'], d['classroom'], parent_permission: d['parent_permission'])
+          Student.new(d['name'], d['age'], d['classroom'], parent_permission: d['parent_permission'], id: d['id'])
         when 'Teacher'
-          Teacher.new(d['name'], d['age'], d['specialization'])
+          Teacher.new(d['name'], d['age'], d['specialization'], id: d['id'])
         end
       when 'books.json'
         Book.new(d['title'], d['author'])
       when 'rentals.json'
-        Rental.new(d['date'], d['book'], d['person'])
+        book = Book.new(d['book']['title'], d['book']['author'])
+        person = Person.new(d['person']['name'], d['person']['age'], id: d['person']['id'])
+        Rental.new(d['date'], book, person)
       end
     end
   end

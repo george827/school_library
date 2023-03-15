@@ -9,9 +9,9 @@ class Person < Nameable
   attr_accessor :rentals, :name, :age
   attr_reader :id
 
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(age, name = 'Unknown', parent_permission: true, id: Random.rand(1..1000))
     super()
-    @id = Random.rand(1..1000)
+    @id = id
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -20,7 +20,7 @@ class Person < Nameable
 
   def add_rental(date, book)
     rental = Rental.new(date, book, self)
-    @rentals.push(rental)
+    @rentals.push(rental) unless @rentals.include?(rental)
   end
 
   def correct_name
@@ -36,7 +36,6 @@ class Person < Nameable
       'id' => @id,
       'name' => @name,
       'age' => @age,
-      'rentals' => @rentals
     }.to_json(*args)
   end
 

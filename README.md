@@ -14,14 +14,11 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 
@@ -55,10 +52,6 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## 🚀 Live Demo <a name="live-demo"></a>
-
-
-- No Live Demo available
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -101,6 +94,14 @@ Install this project with:
   bundle i
   ruby person.rb
 ```
+
+### usage
+To run the project, execute the following command:\
+
+```sh
+ Run ruby main.rb to run the console app.
+ ```
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

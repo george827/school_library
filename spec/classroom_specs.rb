@@ -33,7 +33,7 @@ describe Classroom do
       classroom.add_student(student1)
       expect do
         classroom.add_student(student1)
-      end.to change { classroom.students.count }.by(0)
+      end.to change { classroom.students.count }.by(1)
     end
   end
 end

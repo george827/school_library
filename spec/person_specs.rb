@@ -57,9 +57,8 @@ describe Person do
 
     it 'returns false if the person is not of age and does not have parent permission' do
       person.age = 17
-        person.instance_variable_set(:@parent_permission, false)
-        expect(person.can_use_services?).to eq(false)
+      person.instance_variable_set(:@parent_permission, false)
+      expect(person.can_use_services?).to eq(false)
     end
-   end
+  end
 end
-

@@ -31,9 +31,9 @@ describe Classroom do
 
     it 'should not add the same student to the students array twice' do
       classroom.add_student(student1)
-      expect {
+      expect do
         classroom.add_student(student1)
-      }.not_to change { classroom.students.count }
+      end.to change { classroom.students.count }.by(0)
     end
   end
 end

@@ -11,9 +11,9 @@ describe Book do
 
   context '#add_rental' do
     it 'should add a rental to the rentals array' do
-      expect {
+      expect do
         book.add_rental('1999/12/12', person)
-      }.to change { book.rentals.count }.by(1)
+      end.to change { book.rentals.count }.by(1)
     end
   end
 

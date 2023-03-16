@@ -1,0 +1,4 @@
+[
+  "{\"type\":\"Student\",\"id\":609,\"name\":\"21\",\"age\":\"george\",\"classroom\":true,\"parent_permission\":true}",
+  "{\"type\":\"Teacher\",\"id\":686,\"name\":\"43\",\"age\":\"white\",\"specialization\":\"chem\",\"parent_permission\":\"true\"}"
+]

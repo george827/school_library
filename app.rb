@@ -2,11 +2,29 @@ require './rental'
 require './student'
 require './teacher'
 require './book'
+require './writer'
+require 'json'
 
 class App
+  attr_reader :books, :people, :rentals
+
   def initialize
-    @books = []
-    @people = []
+    # read from json
+
+    base = Dir.pwd.to_s
+    File.open("#{base}/books.json", 'w') unless File.exist?("#{base}/books.json")
+    File.open("#{base}/people.json", 'w') unless File.exist?("#{base}/people.json")
+    File.open("#{base}/rentals.json", 'w') unless File.exist?("#{base}/rentals.json")
+    book_data = File.read('books.json')
+    people_data = File.read('people.json')
+    rentals_data = File.read('rentals.json')
+    @books = Writter.morph(book_data == '' ? [] : JSON.parse(book_data), 'books.json')
+    @people = Writter.morph(people_data == '' ? [] : JSON.parse(people_data), 'people.json')
+    @rentals = Writter.morph(rentals_data == '' ? [] : JSON.parse(rentals_data), 'rentals.json')
+  end
+
+  def gets_books
+    @books
   end
 
   def list_all_books
@@ -106,21 +124,20 @@ class App
 
     puts 'Date: '
     date = gets.chomp
-    Rental.new(date, @books[book_option], @people[person_option])
-
+    @rentals.push(Rental.new(date, @books[book_option], @people[person_option]))
     puts 'Rental created successfully'
   end
 
   def list_rentals_of_person_id()
     print 'Id of person: '
     id = gets.chomp.to_i
-    person_arr = @people.select { |person| person.id == id }
+    person_arr = @rentals.select { |rental| rental.person.id == id }
 
     if person_arr.empty?
       puts 'No person matches the given ID!!'
     else
       print 'Rentals:'
-      person_arr[0].rentals.each do |rental|
+      person_arr.each do |rental|
         puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
       end
     end

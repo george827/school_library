@@ -1,4 +1,5 @@
 require './app'
+require './writer'
 
 class Main
   def show_list
@@ -37,6 +38,8 @@ class Main
     when '5' then app.create_rental
     when '6' then app.list_rentals_of_person_id
     when '7'
+      # create a new file with the current data
+      Writter.write(app.people, app.books, app.rentals)
       puts 'Thank you for using this app!'
       exit
     end
